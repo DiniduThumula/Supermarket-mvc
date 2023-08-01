@@ -4,16 +4,26 @@
  */
 package supermarket.mvc.view;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import supermarket.mvc.Controller.CustomerController;
+import supermarket.mvc.Model.CustomerModel;
+
 /**
  *
  * @author Macmillan
  */
 public class CustomerView extends javax.swing.JFrame {
+    
+    private CustomerController customerController;
 
     /**
      * Creates new form CustomerView
      */
     public CustomerView() {
+        customerController = new CustomerController();
         initComponents();
     }
 
@@ -38,17 +48,19 @@ public class CustomerView extends javax.swing.JFrame {
         nameText = new javax.swing.JTextField();
         dobLabel = new javax.swing.JLabel();
         dobText = new javax.swing.JTextField();
-        addressLabel = new javax.swing.JLabel();
-        addressText = new javax.swing.JTextField();
+        salaryLabel = new javax.swing.JLabel();
+        salaryText = new javax.swing.JTextField();
+        provinceText = new javax.swing.JTextField();
         cityLabel = new javax.swing.JLabel();
         cityText = new javax.swing.JTextField();
-        provinceLabel = new javax.swing.JLabel();
-        provinceText = new javax.swing.JTextField();
-        postalLabel = new javax.swing.JLabel();
         postalText = new javax.swing.JTextField();
+        provinceLabel = new javax.swing.JLabel();
         addButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
+        addressText = new javax.swing.JTextField();
         deleteButton = new javax.swing.JButton();
+        addressLabel = new javax.swing.JLabel();
+        postalLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,11 +114,17 @@ public class CustomerView extends javax.swing.JFrame {
             }
         });
 
-        addressLabel.setText("Address");
+        salaryLabel.setText("Salary");
 
-        addressText.addActionListener(new java.awt.event.ActionListener() {
+        salaryText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addressTextActionPerformed(evt);
+                salaryTextActionPerformed(evt);
+            }
+        });
+
+        provinceText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                provinceTextActionPerformed(evt);
             }
         });
 
@@ -118,21 +136,13 @@ public class CustomerView extends javax.swing.JFrame {
             }
         });
 
-        provinceLabel.setText("Province");
-
-        provinceText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                provinceTextActionPerformed(evt);
-            }
-        });
-
-        postalLabel.setText("Postal Code");
-
         postalText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postalTextActionPerformed(evt);
             }
         });
+
+        provinceLabel.setText("Province");
 
         addButton.setText("Save Customer");
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -148,12 +158,22 @@ public class CustomerView extends javax.swing.JFrame {
             }
         });
 
+        addressText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addressTextActionPerformed(evt);
+            }
+        });
+
         deleteButton.setText("Update Customer");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
             }
         });
+
+        addressLabel.setText("Address");
+
+        postalLabel.setText("Postal Code");
 
         javax.swing.GroupLayout formPanelLayout = new javax.swing.GroupLayout(formPanel);
         formPanel.setLayout(formPanelLayout);
@@ -163,41 +183,64 @@ public class CustomerView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(formPanelLayout.createSequentialGroup()
-                        .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(custidLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dobLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                            .addComponent(addressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(postalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(formPanelLayout.createSequentialGroup()
-                                .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(postalText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                                    .addComponent(cityText, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(provinceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(provinceText, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(formPanelLayout.createSequentialGroup()
-                                .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(custidText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                                    .addComponent(titleText)
-                                    .addComponent(dobText))
-                                .addGap(44, 44, 44)
-                                .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(postalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(cityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(deleteButton)
+                        .addComponent(addressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(25, 25, 25))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(salaryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(dobLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(custidLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(salaryText)
+                        .addGap(512, 512, 512))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(dobText)
+                        .addGap(512, 512, 512))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(titleText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(updateButton)
+                        .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addButton)))
-                .addContainerGap())
+                        .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(custidText)
+                        .addGap(512, 512, 512))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(cityText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(provinceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(provinceText, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(187, 187, 187))
+                    .addGroup(formPanelLayout.createSequentialGroup()
+                        .addComponent(postalText)
+                        .addGap(472, 472, 472))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formPanelLayout.createSequentialGroup()
+                .addContainerGap(403, Short.MAX_VALUE)
+                .addComponent(deleteButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(updateButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addButton)
+                .addGap(6, 6, 6))
         );
         formPanelLayout.setVerticalGroup(
             formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,6 +259,10 @@ public class CustomerView extends javax.swing.JFrame {
                 .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dobLabel)
                     .addComponent(dobText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(salaryLabel)
+                    .addComponent(salaryText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(formPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addressLabel)
@@ -235,7 +282,7 @@ public class CustomerView extends javax.swing.JFrame {
                     .addComponent(addButton)
                     .addComponent(updateButton)
                     .addComponent(deleteButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout basePanelLayout = new javax.swing.GroupLayout(basePanel);
@@ -243,7 +290,7 @@ public class CustomerView extends javax.swing.JFrame {
         basePanelLayout.setHorizontalGroup(
             basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(basePanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, basePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(formPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(22, 22, 22))
@@ -254,7 +301,7 @@ public class CustomerView extends javax.swing.JFrame {
                 .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(formPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 192, Short.MAX_VALUE))
+                .addGap(0, 170, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -304,7 +351,7 @@ public class CustomerView extends javax.swing.JFrame {
     }//GEN-LAST:event_postalTextActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
+    saveCustomer();
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
@@ -314,6 +361,10 @@ public class CustomerView extends javax.swing.JFrame {
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void salaryTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salaryTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salaryTextActionPerformed
 
     
 
@@ -338,8 +389,30 @@ public class CustomerView extends javax.swing.JFrame {
     private javax.swing.JTextField postalText;
     private javax.swing.JLabel provinceLabel;
     private javax.swing.JTextField provinceText;
+    private javax.swing.JLabel salaryLabel;
+    private javax.swing.JTextField salaryText;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JTextField titleText;
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
+ private void saveCustomer(){
+    CustomerModel customer = new CustomerModel(
+            custidText.getText(), 
+            titleText.getText(), 
+            nameText.getText(), 
+            dobText.getText(), 
+            Double.parseDouble(salaryText.getText()), 
+            addressText.getText(), 
+            cityText.getText(), 
+            provinceText.getText(), 
+            postalText.getText());
+    
+        try {
+            String resp = customerController.saveCustomer(customer);
+            JOptionPane.showMessageDialog(this, resp);
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerView.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }
 }

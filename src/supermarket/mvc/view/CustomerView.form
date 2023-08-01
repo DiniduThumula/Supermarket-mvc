@@ -39,7 +39,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="headerPanel" max="32767" attributes="0"/>
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="formPanel" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -52,7 +52,7 @@
                   <Component id="headerPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="formPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="192" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="170" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,53 +94,84 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="custidLabel" max="32767" attributes="0"/>
-                                  <Component id="titleLabel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="dobLabel" alignment="0" pref="83" max="32767" attributes="0"/>
-                                  <Component id="addressLabel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="cityLabel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="postalLabel" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="addressText" alignment="0" min="-2" pref="663" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="postalText" alignment="0" pref="193" max="32767" attributes="0"/>
-                                          <Component id="cityText" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="provinceLabel" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="provinceText" min="-2" pref="211" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="custidText" alignment="0" pref="161" max="32767" attributes="0"/>
-                                          <Component id="titleText" max="32767" attributes="0"/>
-                                          <Component id="dobText" alignment="1" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Component id="nameLabel" min="-2" pref="93" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="nameText" min="-2" pref="353" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="postalLabel" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="cityLabel" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="deleteButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="addressLabel" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="salaryLabel" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="updateButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="dobLabel" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="addButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="titleLabel" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="custidLabel" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="addressText" min="-2" pref="555" max="-2" attributes="0"/>
+                              <EmptySpace min="110" pref="110" max="110" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="salaryText" max="32767" attributes="0"/>
+                              <EmptySpace min="512" pref="512" max="512" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="dobText" max="32767" attributes="0"/>
+                              <EmptySpace min="512" pref="512" max="512" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="titleText" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="nameLabel" min="-2" pref="93" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="nameText" min="-2" pref="399" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="custidText" max="32767" attributes="0"/>
+                              <EmptySpace min="512" pref="512" max="512" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="cityText" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="provinceLabel" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="provinceText" min="-2" pref="175" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="postalText" max="32767" attributes="0"/>
+                              <EmptySpace min="472" pref="472" max="472" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="403" max="32767" attributes="0"/>
+                      <Component id="deleteButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="updateButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="addButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -163,6 +194,11 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="dobLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="dobText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="salaryLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="salaryText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -187,7 +223,7 @@
                           <Component id="updateButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -233,14 +269,19 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dobTextActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="addressLabel">
+            <Component class="javax.swing.JLabel" name="salaryLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Address"/>
+                <Property name="text" type="java.lang.String" value="Salary"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="addressText">
+            <Component class="javax.swing.JTextField" name="salaryText">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addressTextActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salaryTextActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="provinceText">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="provinceTextActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="cityLabel">
@@ -253,25 +294,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cityTextActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="provinceLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Province"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="provinceText">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="provinceTextActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="postalLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Postal Code"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="postalText">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="postalTextActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="provinceLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Province"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="addButton">
               <Properties>
@@ -289,6 +320,11 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateButtonActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JTextField" name="addressText">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addressTextActionPerformed"/>
+              </Events>
+            </Component>
             <Component class="javax.swing.JButton" name="deleteButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update Customer"/>
@@ -296,6 +332,16 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteButtonActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="addressLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Address"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="postalLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Postal Code"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
