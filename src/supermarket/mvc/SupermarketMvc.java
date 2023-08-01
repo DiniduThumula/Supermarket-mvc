@@ -4,6 +4,8 @@
  */
 package supermarket.mvc;
 
+import supermarket.mvc.view.CustomerView;
+
 /**
  *
  * @author Macmillan
@@ -14,7 +16,7 @@ public class SupermarketMvc {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello!");
+        new CustomerView().setVisible(true);
     }
     
 }
